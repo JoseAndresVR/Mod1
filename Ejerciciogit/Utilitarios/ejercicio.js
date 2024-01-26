@@ -1,7 +1,7 @@
 recuperación=function(ids){
     console.log("Hola");
     let nam = document.getElementById(ids);
-    let vl = nam.valsue;
+    let vl = nam.value;
     return vl
 }
 
