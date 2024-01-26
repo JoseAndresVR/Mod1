@@ -112,5 +112,18 @@ limpiar = function () {
         Dejar todos los textos de los montos con el valor 0.0
         Si funciona, hacer un commit
      */
+    mostrarTexto("lblValorIVA","0.0");
+    mostrarTexto("lblTotal","0.0");       
+    mostrarTexto("lblDescuento","0.0");
+    mostrarTexto("lblSubtotal","0.0");
+    mostrarTexto("lblResumen","");
+
+    mostrarTextoEnCaja("txtProducto","");
+    mostrarTextoEnCaja("txtCantidad","");       
+    mostrarTextoEnCaja("txtPrecio","");
+    mostrarTextoEnCaja("txtPorcentajeDescuento","");
+
+
+    
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
