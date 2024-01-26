@@ -7,7 +7,8 @@ calcularIVA = function(montoSinIVA){
     return (montoSinIVA*12)/100;
 }
 calcularSubTotal = function(precio,cantidad){
-    return precio*cantidad;
+    let sub = precio*cantidad;
+    return sub;
 }
 
 calcularTotal = function(subtotal,descuento,iva){
