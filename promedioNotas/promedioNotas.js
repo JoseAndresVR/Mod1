@@ -6,6 +6,10 @@ calcularPromedioNotas = function(){
     let prf = promedio.toFixed(2);
     let mensaje = "Calificación "+prf;
     cambiarTexto("califi",mensaje);
-
+    if (prf>=7) {
+        cambiarImagen("ima","alegria.gif")
+    } else {
+        cambiarImagen("ima","tristeza.gif")
+    }
 
 }
