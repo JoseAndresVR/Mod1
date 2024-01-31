@@ -6,10 +6,18 @@ calcularPromedioNotas = function(){
     let prf = promedio.toFixed(2);
     let mensaje = "Calificación "+prf;
     cambiarTexto("califi",mensaje);
-    if (prf>=7) {
-        cambiarImagen("ima","alegria.gif")
-    } else {
-        cambiarImagen("ima","tristeza.gif")
+    if (prf<5&&prf>0) {
+        cambiarImagen("ima","tristeza.gif");
+        cambiarTexto("cal","REPROBADO");
+    } else if(prf>=5 && prf<=8) {
+        cambiarImagen("ima","gj.gif");
+        cambiarTexto("cal","BUEN TRABAJO");
+    }else if(prf>8 && prf<=10) {
+        cambiarImagen("ima","alegria.gif");
+        cambiarTexto("cal","EXCELENTE");
+    }else{
+        cambiarImagen("ima","nope.gif");
+        cambiarTexto("cal","DATOS INCORECTOS");
     }
 
 }
