@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placas</title>
+    <link rel="stylesheet" href="placas.css">
+    <script src="placas.js"></script>
+    <script src="utilitarios.js"></script>
+    <script src="utilitariosCadenas.js"></script>
+    <script src="servicioPlacas.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="estructura">
+        <div class="cabece">
+            <img src="IMG/placa.png">
+            <h1>Servicio de placas</h1>
+        </div>
+
+        <div class="funci">
+            <label >Ingresa tu placa:</label>
+            <input type="text" id="txtPlaca" >
+            <input type="button" value="VALIDAR" onclick="validarPlaca();" class="boton">
+            <input type="button" value="LIMPIAR" onclick="limpiar();" class="boton boton2">
+
+        </div>
+
+        <div class="valida">
+            <label id="lblVali">...</label>
+            <label id="lblProvincia">...</label>
+            <label id="lblVehiculo">...</label>
+            <label id="lblCirculacion">...</label>
+
+            <h2>Errores</h2>
+            <label id="lblErores">
+                ...
+            </label>
+        </div>
+    </div>
+</body>
+</html>
