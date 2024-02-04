@@ -8,8 +8,56 @@
     <script src="juego.js"></script>
     <script src="serviciosJuego.js"></script>
     <script src="utilitarios.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <input type="button" value="Tirar" onclick="obtenerAleatorio();">
+    <div class="cont">
+        <div class="cab">
+            <h1>JUEGA PIEDRA PAPEL Y TIJERA</h1>
+        </div>
+
+        <div class="usuario">
+            <div class="user">
+                <h2>COMPUTADORA/JUGADOR 2</h2>
+            </div>
+            <div class="img2">
+                <img src="IMG/inter.png" id="imas">
+            </div>
+        </div>
+
+        <div class="centro">
+            <div class="jugador">
+                <h3>Puntaje Maquina</h3>
+                <label id="lblMaquina">0</label>
+            </div>
+            <div class="mesa"><h2 id="ganar">...</h2></div>
+            <div class="jugador">
+                <h3>Puntaje jugador 1</h3>
+                <label id="lblJugador">0</label>
+            </div>
+        </div>
+
+
+        <div class="opciones">
+            <div class="img1"><img src="IMG/papel.png" onclick="jugar('Papel'); " id="cmpImg1"></div>
+            <div class="img1"><img src="IMG/tijera.png" onclick="jugar('Tijera');"id="cmpImg2"></div>
+            <div class="img1"><img src="IMG/piedra.png" onclick="jugar('Piedra');"id="cmpImg3"></div>
+        </div>
+        <div class="user usuario">
+            <h2>JUGADOR 1</h2>
+        </div>
+
+        <input type="button" value="NUEVA PARTIDA" onclick="limpiar();">
+
+        
+
+
+    </div>
 </body>
 </html>

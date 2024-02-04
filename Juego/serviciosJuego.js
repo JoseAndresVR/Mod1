@@ -10,22 +10,31 @@ obtenerAleatorio = function () {
 generarElemento = function () {
     let x = obtenerAleatorio();
     if (x==1) {
-        return " Piedra ";
+        return "Piedra";
     }else if (x==2) {
-        return " Papel ";
+        return "Papel";
     }else{
-        return " Tijera ";
+        return "Tijera";
     }
 }
 
 determinarGanador= function(eleccionJugador1,eleccionJugador2){
-    eleccionJugador1 = generarElemento();
-    eleccionJugador2 = generarElemento();
     if (((eleccionJugador1=="Piedra")&&(eleccionJugador2=="Tijera")||((eleccionJugador1=="Papel")&&(eleccionJugador2=="Piedra"))||(eleccionJugador1=="Tijera")&&(eleccionJugador2=="Papel"))) {
         return 1;
     }else if(((eleccionJugador1=="Piedra")&&(eleccionJugador2=="Piedra")||((eleccionJugador1=="Papel")&&(eleccionJugador2=="Papel"))||(eleccionJugador1=="Tijera")&&(eleccionJugador2=="Tijera"))){
         return 0;
     }else {
         return 2;
+    }
+}
+
+
+generarRuta= function(nombre){
+    if (nombre=="Piedra") {
+        return "./IMG/piedra.png";
+    }else if (nombre=="Papel") {
+        return "./IMG/papel.png";
+    }else{
+        return "./IMG/tijera.png";
     }
 }

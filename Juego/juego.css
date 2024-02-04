@@ -1,0 +1,153 @@
+body{
+    background-color: black;
+}
+
+.cont{
+    background-color: green;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cab{
+    font-family: 'Sixtyfour', sans-serif;
+    text-align: center;
+    border: solid wheat;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    background-color: wheat;
+    width:1000px;
+    margin: auto;
+}
+
+.usuario{
+    text-align: center;
+}
+.user h2{
+    background-color: cadetblue;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border: solid cadetblue;
+    width: 400px;
+    margin: 20px auto;
+    font-family: 'Protest Strike', sans-serif;
+    font-size: 30px;
+}
+
+.img2 {
+    border: solid white;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img2 img{
+    width: 200px;
+}
+
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jugador{
+    background-color: white;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border: solid black;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.mesa{
+    background-color: brown;
+    border: solid black;
+    width: 1200px;
+    height: 600px;
+    margin-top: 50px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mesa h2{
+    font-size: 100px;
+    margin-bottom: 180px;
+    text-align: center;
+}
+
+.opciones{
+    display: flex;
+    justify-content: space-around;
+    width: 1300px;
+    margin: 40px auto;    
+}
+
+.opciones img{
+    width: 200px;
+}
+.img1{
+    border: solid white;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img1:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+input{
+    background-color: aqua;
+    border: solid aquamarine;
+    font-size: 30px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    padding: 10px;
+    font-family: 'Sixtyfour', sans-serif;
+}
+input:hover{
+    background-color: darkturquoise;
+    cursor: pointer;
+}

@@ -35,4 +35,20 @@ recuperarFloat = function (idComponente) {
     return valorFlotante;
 }
 
+recuperarName = function(idComponente){
+    let nam = document.getElementById(idComponente);
+    let nombre = nam.name;
+    return nombre;
+}
+
+recuperarRuta = function(idComponente){
+    let rut = document.getElementById(idComponente);
+    let ruta = nam.src;
+    return ruta;
+}
+
+recuperarCmp = function(idComponente){
+    let cmp= document.getElementById(idComponente);
+    return cmp;
+}
 
