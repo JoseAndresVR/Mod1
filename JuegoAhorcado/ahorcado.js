@@ -19,26 +19,36 @@ guardarPalabra = function(){
     }
     if (pal.length==5 && x==5){
         palabraSecreta = pal;
+        x=0;
     }else{
         alert ("Debes ingresar 5 letras mayusculas");
     }
 }
 
-mostrarLetra=function(letra,posicion){
-    letra = recuperarTexto("txtLetra")
-    let pal2,p1=0,p2=0,p3=0,p4=0,p5=0,pa;
+mostrarLetra=function(posicion,letra){
+    mostrarTexto("div"+posicion,letra);
+}
+
+validar = function(letra){
+    letra = recuperarTexto("txtLetra"); 
+    let letrasEncontradas,pal2;
     for (let i = 0; i < palabraSecreta.length; i++) {
         pal2 = palabraSecreta.charAt(i);
         if (letra==pal2 && i==0) {
-            mostrarTexto("div0",letra);
+            mostrarLetra(i,letra);
+            letrasEncontradas++
         }else if (pal2==letra && i==1) {
-            mostrarTexto("div1",letra)
+            mostrarLetra(i,letra);
+            letrasEncontradas++
         }else if (pal2==letra && i==2) {
-            mostrarTexto("div2",letra)
+            mostrarLetra(i,letra);
+            letrasEncontradas++
         }else if (pal2==letra && i==3) {
-            mostrarTexto("div3",letra)
+            mostrarLetra(i,letra);
+            letrasEncontradas++
         }else if (pal2==letra && i==4) {
-            mostrarTexto("div4",letra)
+            mostrarLetra(i,letra);
+            letrasEncontradas++
         }
     }
 }
