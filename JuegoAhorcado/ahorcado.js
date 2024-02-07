@@ -35,24 +35,37 @@ validar = function(letra){
         pal2 = palabraSecreta.charAt(i);
         if (letra==pal2 && i==0) {
             mostrarLetra(i,letra);
-            letrasEncontradas++
+            letrasEncontradas++;
+            coincidencias++;
+
         }else if (pal2==letra && i==1) {
             mostrarLetra(i,letra);
-            letrasEncontradas++
+            letrasEncontradas++;
+            coincidencias++;
+            
         }else if (pal2==letra && i==2) {
             mostrarLetra(i,letra);
-            letrasEncontradas++
+            letrasEncontradas++;
+            coincidencias++
+
+
         }else if (pal2==letra && i==3) {
             mostrarLetra(i,letra);
-            letrasEncontradas++
+            letrasEncontradas++;
+            coincidencias++;
+
         }else if (pal2==letra && i==4) {
             mostrarLetra(i,letra);
-            letrasEncontradas++
+            letrasEncontradas++;
+            coincidencias++;
+
         }
     }
     if (letrasEncontradas==0) {
         alert("La letra no es parte de la palabra");
         errores++;
+        mostrarAhorcado();
+        letrasEncontradas=0;
     }
 }
 
@@ -60,17 +73,46 @@ ingresarLetra=function () {
     let letra = recuperarTexto("txtLetra");
     intentos++;
     if (intentos==10) {
-        alert("Ha perdidio");
-    }else{
-        if (esMayuscula(letra)) {
-            validar(letra);
-            coincidencias++
-            if (coincidencias==5) {
-                alert("HA GANADO")
-            }
-        }else{
-            alert("Solo se aceptan Mayusculas");
+        mostrarImagen("ahorcadoImagen","gameOver.gif");
+    }
+    if (esMayuscula(letra)) {
+        validar(letra);
+        if (coincidencias==5) {
+            mostrarImagen("ahorcadoImagen","ganador.gif");
+
         }
+    }else{
+        alert("Solo se aceptan Mayusculas");
     }
     
+}
+
+mostrarAhorcado=function(){
+    if (errores==1) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_01.png");
+    }
+    if (errores==2) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_02.png");
+    }
+    if (errores==3) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_03.png");
+    }
+    if (errores==4) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_04.png");
+    }
+    if (errores==5) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_05.png");
+    }
+    if (errores==6) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_06.png");
+    }
+    if (errores==7) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_07.png");
+    }
+    if (errores==8) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_08.png");
+    }
+    if (errores==9) {
+        mostrarImagen("ahorcadoImagen","Ahorcado_09.png");
+    }
 }
