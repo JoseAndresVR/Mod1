@@ -29,8 +29,7 @@ mostrarLetra=function(posicion,letra){
     mostrarTexto("div"+posicion,letra);
 }
 
-validar = function(letra){
-    letra = recuperarTexto("txtLetra"); 
+validar = function(letra){ 
     let letrasEncontradas,pal2;
     for (let i = 0; i < palabraSecreta.length; i++) {
         pal2 = palabraSecreta.charAt(i);
@@ -50,5 +49,14 @@ validar = function(letra){
             mostrarLetra(i,letra);
             letrasEncontradas++
         }
+    }
+}
+
+ingresarLetra=function () {
+    let letra = recuperarTexto("txtLetra");
+    if (esMayuscula(letra)) {
+        validar(letra);
+    }else{
+        alert("Solo se aceptan Mayusculas");
     }
 }
