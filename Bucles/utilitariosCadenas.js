@@ -25,11 +25,4 @@ esGuion = function(caracter){
     }
 }
 
-esEspecial = function(caracter){
-    let x = caracter.charCodeAt();
-    if (x==45 || x== 42 || x==95) {
-        return true;
-    } else{
-        return false;
-    }
-}
+
