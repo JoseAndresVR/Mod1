@@ -28,9 +28,6 @@ agregarNota = function(nota){
 
 let sumaNotas=0,promedio;
 
-probarAgregar2 = function(){
-    notaRecu = recuperarInt("txtNota");
-}
 
 calcularPromedio = function () {
     for (let i = 0; i < notas.length; i++) {
