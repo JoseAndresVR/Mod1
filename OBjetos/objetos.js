@@ -2,7 +2,7 @@ crearProducto = function () {
     let producto1={
         nombre: "Dorito",
         precio:2.30,
-        stock: 3
+        stock: 2
     },producto2={
         nombre: "Chitos",
         precio:2.50,
