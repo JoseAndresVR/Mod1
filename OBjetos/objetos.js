@@ -3,7 +3,7 @@ crearProducto = function () {
         nombre: "Dorito",
         precio:2.30,
         stock: 3
-    };producto2={
+    },producto2={
         nombre: "Chitos",
         precio:2.50,
         stock: 3
