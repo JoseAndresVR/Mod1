@@ -29,3 +29,9 @@ cambiarImagen=function(idComponente,imagen){
     componente=document.getElementById(idComponente);
     componente.src=imagen;
 }
+
+mostrarTextoEnCaja = function (idComponente, mensaje) {
+    let componente;
+    componente = document.getElementById(idComponente);
+    componente.value = mensaje;
+}
