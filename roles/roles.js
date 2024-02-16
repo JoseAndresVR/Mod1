@@ -55,11 +55,10 @@ buscarEmpleado = function (cedula) {
         empleadoEncontrado = empleados[i];
         if (empleadoEncontrado.cedula==cedula) {
             ec=true;
+            return empleadoEncontrado;
         }
     }
-    if (ec==true) {
-        return empleadoEncontrado;
-    }else{
+    if (ec==false) {
         return null;
     }
 }
@@ -132,7 +131,7 @@ guardar = function () {
         if (a1==apellido.length) {
             a2=true;
             mostrarTexto("lblErrorApellido","");
-
+            
         }else{
             mostrarTexto("lblErrorApellido","El apellido ingresado debe ser solo letras Mayusculas");
         }
@@ -159,6 +158,39 @@ guardar = function () {
         }else{
             alert("Empleado guardado correctamente");
             mostrarEmpleados();
+            esNuevo=false;
         }
+    }else if(esNuevo==false){
+        let modificacionEmpleado=buscarEmpleado(ci);
+            modificacionEmpleado.nombre=nombre;
+            modificacionEmpleado.apellido=apellido;
+            modificacionEmpleado.sueldo=sueldo;
+            alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+            mostrarEmpleados();
+        }
+        deshabilitarComponente("txtNombre");
+        deshabilitarComponente("txtApellido");
+        deshabilitarComponente("txtSueldo");
+        deshabilitarComponente("btnGuardar");
+        habilitarComponente("txtBusquedaCedula");
     }
+
+
+ejecutarBusqueda = function () {
+    let cedulaBuscada = recuperarTexto("txtBusquedaCedula"),empleadoBuscado=buscarEmpleado(cedulaBuscada);
+    if (empleadoBuscado==null) {
+        alert("EMPLEADO NO EXISTENTE");
+    }else{
+        mostrarTextoEnCaja("txtCedula",empleadoBuscado.cedula)
+        mostrarTextoEnCaja("txtNombre",empleadoBuscado.nombre)
+        mostrarTextoEnCaja("txtApellido",empleadoBuscado.apellido)
+        mostrarTextoEnCaja("txtSueldo",empleadoBuscado.sueldo)
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+        habilitarComponente("btnGuardar");
+        deshabilitarComponente("txtBusquedaCedula");
+
+    }
+
 }
