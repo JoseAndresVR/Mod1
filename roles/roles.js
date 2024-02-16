@@ -50,16 +50,17 @@ ejecutarNuevo = function () {
 }
 
 buscarEmpleado = function (cedula) {
-    let empleadoEncontrado;
+    let empleadoEncontrado,ec=false;
     for (let i = 0; i < empleados.length; i++) {
         empleadoEncontrado = empleados[i];
         if (empleadoEncontrado.cedula==cedula) {
-            return empleadoEncontrado;
-            break;
-        }else{
-            return null;
-            break;
+            ec=true;
         }
+    }
+    if (ec==true) {
+        return empleadoEncontrado;
+    }else{
+        return null;
     }
 }
 
@@ -154,10 +155,10 @@ guardar = function () {
         empleado.sueldo=sueldo;
         rt= agregarEmpleado(empleado);
         if (rt==false) {
+            alert("Ya existe un empleado con la cedula: "+empleado.cedula);
+        }else{
             alert("Empleado guardado correctamente");
             mostrarEmpleados();
-        }else{
-            alert("Ya existe un empleado con la cedula: "+empleado.cedula);
         }
     }
 }
