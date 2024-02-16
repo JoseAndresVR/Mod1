@@ -186,3 +186,24 @@ tbody tr:nth-child(odd) {
     font-style: italic;
     font-size: 14px;
 }
+
+/*---------------------------------- ESTILO TABLAS -----------------------------------------*/
+
+table{
+    margin-top: 40px;
+    width: 600px;
+    height: 150px;
+
+}
+th{
+    background-color: greenyellow;
+    color: black;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 100;
+    font-style:italic; 
+}
+td{
+    background-color:ghostwhite;
+    font-family: "Oswald", sans-serif;
+    font-style: normal;
+}
