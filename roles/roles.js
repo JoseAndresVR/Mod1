@@ -160,7 +160,7 @@ guardar = function () {
             mostrarEmpleados();
             esNuevo=false;
         }
-    }else if(esNuevo==false){
+    }else if(c2==true && n2==true && a2==true && su==true && esNuevo==false){
         let modificacionEmpleado=buscarEmpleado(ci);
             modificacionEmpleado.nombre=nombre;
             modificacionEmpleado.apellido=apellido;
@@ -192,5 +192,21 @@ ejecutarBusqueda = function () {
         deshabilitarComponente("txtBusquedaCedula");
 
     }
+
+}
+
+limpiar = function () {
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+    mostrarTextoEnCaja("txtBusquedaCedula","");
+    habilitarComponente("txtBusquedaCedula")
+    deshabilitarComponente("btnGuardar");
+    esNuevo=false;
+    mostrarTexto("lblErrorNombre","");
+    mostrarTexto("lblErrorCedula","");
+    mostrarTexto("lblErrorApellido","");
+    mostrarTexto("lblErrorSueldo","");
 
 }
