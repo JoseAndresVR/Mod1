@@ -153,7 +153,7 @@ guardar = function () {
         empleado.apellido=apellido;
         empleado.sueldo=sueldo;
         rt= agregarEmpleado(empleado);
-        if (rt==true) {
+        if (rt==false) {
             alert("Empleado guardado correctamente");
             mostrarEmpleados();
         }else{
