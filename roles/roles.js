@@ -48,3 +48,116 @@ ejecutarNuevo = function () {
     habilitarComponente("btnGuardar");
     esNuevo=true;
 }
+
+buscarEmpleado = function (cedula) {
+    let empleadoEncontrado;
+    for (let i = 0; i < empleados.length; i++) {
+        empleadoEncontrado = empleados[i];
+        if (empleadoEncontrado.cedula==cedula) {
+            return empleadoEncontrado;
+            break;
+        }else{
+            return null;
+            break;
+        }
+    }
+}
+
+agregarEmpleado = function (empleadoNuevo) {
+    let resultado=buscarEmpleado(empleadoNuevo.cedula);
+    if(resultado==null){
+        empleados.push(empleadoNuevo);
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+guardar = function () {
+    let ci=recuperarTexto("txtCedula"),nombre=recuperarTexto("txtNombre"),apellido=recuperarTexto("txtApellido"),sueldo=recuperarFloat("txtSueldo"),nuevoEmpleado={};
+    let ap,a1=0,a2=false,su=false,ced,c1=0,c2=false,nom,n1=0,n2=false;
+    if (ci.length==10) {
+        for (let i = 0; i < ci.length; i++) {
+            ced = ci.charAt(i);
+            if (esDigito(ced)) {
+                c1++;
+            }else{
+                break;
+            }
+            
+        }
+        if (c1==ci.length) {
+            c2=true;
+            mostrarTexto("lblErrorCedula","");
+
+        }else{
+            mostrarTexto("lblErrorCedula","La cedula ingresada debe estar conformada de digitos");
+        }
+    }else{
+        mostrarTexto("lblErrorCedula","La cedula ingresada debe tener exactamente 10 caracteres");
+    }
+// NOMBRE //////////////////////////////////////////////////////////////////////////////////////////////
+    if (nombre.length>=3) {
+        for (let i = 0; i < nombre.length; i++) {
+            nom = nombre.charAt(i);
+            if (esMayuscula(nom)) {
+                n1++;
+            }else{
+                break;
+            }
+            
+        }
+        if (n1==nombre.length) {
+            n2=true;
+            mostrarTexto("lblErrorNombre","");
+        }else{
+            mostrarTexto("lblErrorNombre","El nombre ingresado debe ser solo letras Mayusculas");
+
+        }
+    }else{
+        mostrarTexto("lblErrorNombre","El nombre ingresado debe ser superior a 3 caracteres");
+    }
+// APELLIDO///////////////////////////////////////////////////////////////////////////////////////////////
+    if (apellido.length>=3) {
+        for (let i = 0; i < apellido.length; i++) {
+            ap = apellido.charAt(i);
+            if (esMayuscula(ap)) {
+                a1++;
+            }else{
+                break;
+            }
+        }
+        if (a1==apellido.length) {
+            a2=true;
+            mostrarTexto("lblErrorApellido","");
+
+        }else{
+            mostrarTexto("lblErrorApellido","El apellido ingresado debe ser solo letras Mayusculas");
+        }
+    }else{
+        mostrarTexto("lblErrorApellido","El apellido ingresado debe ser superior a 3 caracteres");
+    }
+// SUELDO//////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+    if (sueldo >= 400.00 && sueldo<=5000) {
+        su=true;
+        mostrarTexto("lblErrorSueldo","");
+    }else{
+        mostrarTexto("lblErrorSueldo","El sueldo ingresado es erroneo");
+    }
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (c2==true && n2==true && a2==true && su==true && esNuevo==true) {
+        let empleado = {},rt;
+        empleado.cedula=ci;
+        empleado.nombre=nombre;
+        empleado.apellido=apellido;
+        empleado.sueldo=sueldo;
+        rt= agregarEmpleado(empleado);
+        if (rt==true) {
+            alert("Empleado guardado correctamente");
+            mostrarEmpleados();
+        }else{
+            alert("Ya existe un empleado con la cedula: "+empleado.cedula);
+        }
+    }
+}
