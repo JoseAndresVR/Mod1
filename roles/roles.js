@@ -21,7 +21,6 @@ mostrarOpcionRol = function () {
     ocultarComponente("divResumen");
     mostrarComponente("divRol");
     deshabilitarComponente("btnGuardarRol");
-
 }
 
 buscarPorRol = function () {
@@ -36,10 +35,22 @@ buscarPorRol = function () {
 
 }
 
+mostrarRoles=function(){
+    let rolesL="<table><tr><th>CEDULA</th><th>NOMBRE</th><th>VALOR A PAGAR</th><th>APORTE EMPLEADO</th><th>APORTE EMPLEADOR</th></tr>",rolesValor;
+    for (let i = 0; i < roles.length; i++) {
+        rolesValor = roles[i];
+        rolesL+="<tr><td>"+rolesValor.cedula+"</td><td>"+rolesValor.nombre+"</td><td>" + rolesValor.valorAPagar+"</td><td>" +rolesValor.aporteEmpleado +"</td><td>" +rolesValor.aporteEmpleador +"</td></tr>";
+    }
+    rolesL+="</table>";
+    mostrarTabla("tablaResumen",rolesL);
+}
+
 mostrarOpcionResumen = function () {
     ocultarComponente("divRol");
     ocultarComponente("divEmpleado");
     mostrarComponente("divResumen");
+    mostrarRoles();
+    mostrarTotales();
 }
 
 mostrarEmpleados = function () {    
@@ -261,10 +272,10 @@ buscarRol = function (cedula) {
 }
 
 agregarRol = function (rol) {
-    let existeRol = buscarPorRol(rol.cedula);
+    let existeRol = buscarRol(rol.cedula);
     if (existeRol==null){
-        alert("Rol agregado exitosamente");
         roles.push(rol);
+        alert("Rol agregado exitosamente");
     }else{
         alert("No se agregó el rol, probablemente ya existe");
     }
@@ -283,4 +294,16 @@ guardarRol = function () {
     rol.aporteEmpleado = aporteRecuperado;
     rol.aporteEmpleador = aporteEmpleador;
     agregarRol(rol);
+}
+
+mostrarTotales = function () {
+    let totalEmpleado=0,totalEmpleador=0,totalAPagar=0;
+    for (let i = 0; i < roles.length; i++) {
+        totalEmpleado += roles[i].aporteEmpleado;
+        totalEmpleador += roles[i].aporteEmpleador;
+        totalAPagar += roles[i].valorAPagar;
+    }
+    mostrarTexto("infoAporteEmpleado",totalEmpleado);
+    mostrarTexto("infoAporteEmpresa",totalEmpleador);
+    mostrarTexto("infoTotalPago",totalAPagar);
 }
