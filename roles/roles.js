@@ -297,7 +297,7 @@ guardarRol = function () {
 }
 
 mostrarTotales = function () {
-    let totalEmpleado=0,totalEmpleador=0,totalAPagar=0;
+    let totalEmpleado=0,totalEmpleador=0,totalAPagar=0,totalNomina=0;
     for (let i = 0; i < roles.length; i++) {
         totalEmpleado += roles[i].aporteEmpleado;
         totalEmpleador += roles[i].aporteEmpleador;
@@ -306,4 +306,6 @@ mostrarTotales = function () {
     mostrarTexto("infoAporteEmpleado",totalEmpleado);
     mostrarTexto("infoAporteEmpresa",totalEmpleador);
     mostrarTexto("infoTotalPago",totalAPagar);
+    totalNomina=totalEmpleado+totalEmpleador+totalAPagar;
+    mostrarTexto("infoTotalNomina",totalNomina);
 }
