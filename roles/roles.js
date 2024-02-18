@@ -22,15 +22,30 @@ mostrarOpcionRol = function () {
     ocultarComponente("divResumen");
     mostrarComponente("divRol");
 
+}
+
+buscarPorRol = function () {
+    let empleadoSeBusca = recuperarTexto("txtBusquedaCedulaRol"),empleadoBus = buscarEmpleado(empleadoSeBusca);
+    if (empleadoBus==null) {
+        alert("Empleado no Encontrado");
+    }else{
+        mostrarTexto("infoCedula",empleadoBus.cedula);
+        mostrarTexto("infoNombre",empleadoBus.nombre);
+        mostrarTexto("infoSueldo",empleadoBus.sueldo);
+    }
 
 }
+
+
+
+
 mostrarOpcionResumen = function () {
     ocultarComponente("divRol");
     ocultarComponente("divEmpleado");
     mostrarComponente("divResumen");
 }
 
-mostrarEmpleados = function () {
+mostrarEmpleados = function () {    
     let empleadoL="<table><tr><th>CEDULA</th><th>NOMBRE</th><th>APELLIDO</th><th>SUELDO</th></tr>",empleadoValor;
     for (let i = 0; i < empleados.length; i++) {
         empleadoValor = empleados[i];
@@ -210,3 +225,4 @@ limpiar = function () {
     mostrarTexto("lblErrorSueldo","");
 
 }
+
