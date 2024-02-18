@@ -36,9 +36,6 @@ buscarPorRol = function () {
 
 }
 
-
-
-
 mostrarOpcionResumen = function () {
     ocultarComponente("divRol");
     ocultarComponente("divEmpleado");
@@ -226,3 +223,25 @@ limpiar = function () {
 
 }
 
+calcularAporteEmpleado = function (sueldo) {
+    return sueldo*0.0945;
+}
+
+calcularValorAPagar = function (sueldo,aporte,descuento) {
+    let valorAPagar;
+    valorAPagar = sueldo-aporte-descuento;
+    return valorAPagar;
+}
+
+calcularRol = function(){
+    let sueldoValor=recuperarFloatDiv("infoSueldo"), descuentoValor=recuperarFloat("txtDescuentos");
+    if (descuentoValor>=0 && descuentoValor<=sueldoValor) {
+        let aporte = calcularAporteEmpleado(sueldoValor),valorPagar = calcularValorAPagar(sueldoValor,aporte,descuentoValor);
+        mostrarTexto("infoIESS",aporte);
+        mostrarTexto("infoPago",valorPagar);
+        mostrarTexto("lblErrorDescuentos","");
+    }else{
+        mostrarTexto("lblErrorDescuentos","Debes ingresar un valor de descuento valido");
+    }
+
+}
