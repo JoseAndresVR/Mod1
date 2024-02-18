@@ -2,8 +2,7 @@ let empleados = [
     {cedula:"1714616123",nombre:"John",apellido:"Cena",sueldo:500.0},
     {cedula:"0914632123",nombre:"Luisa",apellido:"Gonzalez",sueldo:900.0},
     {cedula:"0804514875",nombre:"Jose",apellido:"Valencia",sueldo:1500}
-],esNuevo=false;
-
+],esNuevo=false,roles=[];
 mostrarOpcionEmpleado = function () {
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
@@ -21,6 +20,7 @@ mostrarOpcionRol = function () {
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
     mostrarComponente("divRol");
+    deshabilitarComponente("btnGuardarRol");
 
 }
 
@@ -240,8 +240,47 @@ calcularRol = function(){
         mostrarTexto("infoIESS",aporte);
         mostrarTexto("infoPago",valorPagar);
         mostrarTexto("lblErrorDescuentos","");
+        habilitarComponente("btnGuardarRol");
+
     }else{
         mostrarTexto("lblErrorDescuentos","Debes ingresar un valor de descuento valido");
     }
 
+}
+
+buscarRol = function (cedula) {
+    let rolBuscado;
+    for (let i = 0; i < roles.length; i++) {
+        rolBuscado = roles[i];
+        if (cedula==rolBuscado.cedula) {
+            return rolBuscado;
+            break;
+        }
+    }
+    return null;
+}
+
+agregarRol = function (rol) {
+    let existeRol = buscarPorRol(rol.cedula);
+    if (existeRol==null){
+        alert("Rol agregado exitosamente");
+        roles.push(rol);
+    }else{
+        alert("No se agregó el rol, probablemente ya existe");
+    }
+}
+
+calcularAporteEmpleador = function (sueldo) {
+    return sueldo*0.1115;
+}
+
+guardarRol = function () {
+    let aporteRecuperado = recuperarFloatDiv("infoIESS"),pagoRecuperado = recuperarFloatDiv("infoPago"),cedulaEmpleado= recuperarTextoDiv("infoCedula"),nombreEmpleado=recuperarTextoDiv("infoNombre"),sueldoEmpleado = recuperarFloatDiv("infoSueldo"),aporteEmpleador = calcularAporteEmpleador(sueldoEmpleado),rol={};
+    rol.cedula = cedulaEmpleado;
+    rol.nombre = nombreEmpleado;
+    rol.sueldo = sueldoEmpleado;
+    rol.valorAPagar = pagoRecuperado;
+    rol.aporteEmpleado = aporteRecuperado;
+    rol.aporteEmpleador = aporteEmpleador;
+    agregarRol(rol);
 }
