@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indi.css">
+    <script src="indi.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+<body onload="mostrarPersonas();">
+    <div class="contenedor">
+
+        <div class="titulo">
+
+        </div>
+        <div class="contenedor_funcionalidad">
+            <input type="text" id="txtNombre">
+            <label id="lblErrorNombre"></label>
+        </div>
+        <div class="contenedor_funcionalidad">
+            <input type="text" id="txtEdad">
+            <label id="lblErrorEdad"></label>
+        </div>
+        <input type="button" value="GUARDAR" class="boton" onclick="agregarPersona();">
+        <input type="button" value="BUSCAR" class="boton" onclick="buscarMayor();">
+
+        <div class="tabla" id="tablas">
+
+        </div>
+
+
+    </div>
+</body>
+</html>
