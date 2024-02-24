@@ -55,6 +55,7 @@ guardar = function () {
 
 mostrarPersonas = function () {
     let tablaPersonas = "<table><tr><th>NOMBRE</th><th>APELLIDO</th><th>NOTA 1</th><th>NOTA 2</th><th>NOTA 3</th><th>TOTAL</th><th>PROMEDIO</th></tr>",datosEstudiante;
+    let tabla = document.getElementById("tablaDiv");
     for (let i = 0; i < estudiantes.length; i++) {
         datosEstudiante=estudiantes[i];
         tablaPersonas += "<tr><th>"+datosEstudiante.nombre+"</th><th>"+datosEstudiante.apellido+"</th><th>"+datosEstudiante.nota1+"</th><th>"+datosEstudiante.nota2+"</th><th>"+datosEstudiante.nota3+"</th><th>"+datosEstudiante.total+"</th><th>"+datosEstudiante.promedio+"</th></tr>";
@@ -62,6 +63,7 @@ mostrarPersonas = function () {
     }
     tablaPersonas+="</table>";
     mostrarTabla("tablaDiv",tablaPersonas);
+    tabla.innerHTML = tablaPersonas;
     deshabilitarComponente("guardar");
 }
 
