@@ -108,11 +108,44 @@ estaVacia1=(idComponente, valor)=>{
 
 validarNota=(idComponente,nota)=>{
     let hayError=false;
-   if (nota<0 || nota>10) {
+
+
+   if (nota<0 || nota>10 || isNaN(nota) ) {
     hayError=true;
     mostrarTexto(idComponente,"DEBE TENRE UN VALOR ENTRE 0 Y 10");
    }else{
     mostrarTexto(idComponente,"");
    }
    return hayError;
+}
+
+esDigito=(caracter)=>{
+    let codigo;
+    codigo=caracter.charCodeAt(0);
+
+    
+    if (codigo >= 48 && codigo<= 57) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+esValidadTexto=(idComponente, valor)=>{
+
+    let hayError=false;
+    if (!estaVacia1(idComponente,  valor)) {
+        if (valor.length<3) {
+            hayError=true;
+            mostrarTexto(idComponente,"DEBE TENER AL MENOS 3 CARACTERES");
+        } 
+
+        
+    }else{
+        hayError=true;
+    }
+    if (hayError==false) {
+        mostrarTexto(idComponente,"");
+    }
+    return hayError;
 }
