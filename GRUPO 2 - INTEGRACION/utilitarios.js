@@ -9,11 +9,6 @@ mostrarTexto=function(idComponente,mensaje){
     componente=document.getElementById(idComponente);
     componente.innerText = mensaje;
 }
-mostrarTabla=function(idComponente,mensaje){
-    let componente;
-    componente=document.getElementById(idComponente);
-    componente.innerHTML = mensaje;
-}
 mostrarTextoEnCaja = function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
@@ -55,8 +50,7 @@ deshabilitarComponente = function(idComponente){
 habilitarComponente = function(idComponente){
     document.getElementById(idComponente).disabled = false;
 }
-
-recuperarTextoDiv = function (idComponente) {
+recuperarTextDiv=(idComponente)=>{
     let componente;
     let valorIngresado;
     componente=document.getElementById(idComponente);
@@ -64,14 +58,18 @@ recuperarTextoDiv = function (idComponente) {
     return valorIngresado;
 }
 
-recuperarIntDiv = function(idComponente){
-    let valorCaja= recuperarTextoDiv(idComponente);
-    let valorEntero = parseInt(valorCaja);
-    return valorEntero;
-}
-
 recuperarFloatDiv = function(idComponente){
-    let valorCaja= recuperarTextoDiv(idComponente);
+    let valorCaja= recuperarTextDiv(idComponente);
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
+ }
+ recuperarIntDiv = function(idComponente){
+    let valorCaja= recuperarTextDiv(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
+ }
+ cambiarTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText=mensaje;
 }
