@@ -12,19 +12,27 @@
     <div class="contenedor">
 
         <div class="titulo">
-
+            <h1>RETO INDIVIDUAL</h1>
         </div>
         <div class="contenedor_funcionalidad">
-            <input type="text" id="txtNombre">
-            <label id="lblErrorNombre"></label>
+            <h3>INGRESA TU NOMBRE</h3>
+            <div class="funcionalidad">
+                <input type="text" id="txtNombre">
+                <label id="lblErrorNombre"></label>
+            </div>
         </div>
         <div class="contenedor_funcionalidad">
-            <input type="text" id="txtEdad">
-            <label id="lblErrorEdad"></label>
+            <h3>INGRESA TU EDAD</h3>
+            <div class="funcionalidad">
+                <input type="text" id="txtEdad">
+                <label id="lblErrorEdad"></label>
+            </div>
         </div>
-        <input type="button" value="GUARDAR" class="boton" onclick="agregarPersona();">
+        <div class="botones">
+            <input type="button" value="GUARDAR" class="boton" onclick="agregarPersona();">
         <input type="button" value="BUSCAR" class="boton" onclick="buscarMayor();">
 
+        </div>
         <div class="tabla" id="tablas">
 
         </div>
