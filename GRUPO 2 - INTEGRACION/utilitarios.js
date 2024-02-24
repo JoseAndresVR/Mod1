@@ -112,3 +112,15 @@ estaVacia1=(idComponente, valor)=>{
         return false;
     }
 }
+
+
+validarNota=(idComponente,nota)=>{
+    let hayError=false;
+   if (nota<0 || nota>10) {
+    hayError=true;
+    mostrarTexto(idComponente,"DEBE TENRE UN VALOR ENTRE 0 Y 10");
+   }else{
+    mostrarTexto(idComponente,"");
+   }
+   return hayError;
+}

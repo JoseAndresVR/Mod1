@@ -172,7 +172,13 @@ calcularTotal=(n1,n2,n3)=>{
 
             let nombre=recuperarTexto("txtNombre");
          let apellido=recuperarTexto("txtApellido");
-if (!esValidadTexto('lblErrorNombre', nombre) & !esValidadTexto('lblErrorApellido', apellido)) {
+if (!esValidadTexto('lblErrorNombre', nombre) &
+ !esValidadTexto('lblErrorApellido', apellido) &
+ !validarNota('lblErrorNota1', nota1) &
+ !validarNota('lblErrorNota2', nota2) &
+ !validarNota('lblErrorNota3', nota3)
+
+ ) {
     let nuevaPersona={};
     nuevaPersona.nombre=nombre;
     nuevaPersona.apellido=apellido;
