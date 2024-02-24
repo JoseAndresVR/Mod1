@@ -23,20 +23,27 @@ calcular = function () {
 
 guardar = function () {
     let nota1=recuperarFloat("txtNota1"),nota2=recuperarFloat("txtNota2"),nota3=recuperarFloat("txtNota3"),nombre=recuperarTexto("txtNombre"),apellido=recuperarTexto("txtApellido"),estudiante={}
+    let total=calcularTotal(nota1,nota2,nota3),promedio=calcularPromedio(nota1,nota2,nota3);
+    estudiante.nombre=nombre;
+    estudiante.apellido=apellido;
     if ((nota1>=0 && nota1<=10)&&(nota2>=0 && nota2<=10)&&(nota3>=0 && nota3<=10)) {
         estudiante.nota1=nota1;
         estudiante.nota2=nota2;
         estudiante.nota3=nota3;
+        estudiante.total=total;
+        estudiante.promedio=promedio;
+        estudiantes.push(estudiante);
+        alert("Notas Guardadas con exito");
+
     }else{
         mostrarTexto("errorNota1","Ingresa una nota valida entre 0 y 10");
+        mostrarTexto("errorNota2","Ingresa una nota valida entre 0 y 10");
+        mostrarTexto("errorNota3","Ingresa una nota valida entre 0 y 10");
+        alert("Hay Errores")
     }
     
-    let total=calcularTotal(nota1,nota2,nota3),promedio=calcularPromedio(nota1,nota2,nota3);
-    estudiante.total=total;
-    estudiante.promedio=promedio;
-    estudiantes.push(estudiante);
+    
     mostrarPersonas();
-    alert("Notas Guardadas con exito");
     mostrarTextoEnCaja("txtNombre","");
     mostrarTextoEnCaja("txtApellido","");
     mostrarTextoEnCaja("txtNota1","");
