@@ -22,7 +22,15 @@ calcular = function () {
 }
 
 guardar = function () {
-    let nota1=recuperarFloat("txtNota1"),nota2=recuperarFloat("txtNota2"),nota3=recuperarFloat("txtNota3"),nombre=recuperarTexto("txtNombre"),apellido=recuperarTexto("txtApellido"),estudiante={}
+    let nota1=recuperarFloat("txtNota1"),
+    nota2=recuperarFloat("txtNota2"),
+    nota3=recuperarFloat("txtNota3"),
+    nombre=recuperarTexto("txtNombre"),
+    apellido=recuperarTexto("txtApellido"),
+    estudiante={};
+    
+    estudiante.nombre=nombre;
+    estudiante.apellido=apellido;
     estudiante.nota1=nota1;
     estudiante.nota2=nota2;
     estudiante.nota3=nota3;
@@ -41,10 +49,13 @@ guardar = function () {
     mostrarTexto("lblPromedio","");
     deshabilitarComponente("guardar");
 
+
+
 }
 
 
 mostrarPersonas = function () {
+    
     let tablaPersonas = "<table><tr><th>NOMBRE</th><th>APELLIDO</th><th>NOTA 1</th><th>NOTA 2</th><th>NOTA 3</th><th>TOTAL</th><th>PROMEDIO</th></tr>",datosEstudiante;
     for (let i = 0; i < estudiantes.length; i++) {
         datosEstudiante=estudiantes[i];
