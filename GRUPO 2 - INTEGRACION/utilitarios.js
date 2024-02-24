@@ -86,13 +86,13 @@ esNombreValido=function(nombre){
 }
 
 esApellidoValido=function(apellido){
-    let nombreValido=false;
-    if(nombre.legth>=3){
+    let apellidoValido=false;
+    if(apellido.legth>=3){
             mostrarTexto("lblApellidoError","");
         return true;
     }else{
     mostrarTexto("lblApellidoError","Debe tener al menos 3 caracteres");
-    return nombreValido;
+    return apellidoValido;
     }
 }
 
