@@ -74,7 +74,7 @@ recuperarFloatDiv = function(idComponente){
     componente.innerText=mensaje;
 }
 
-esValidadTexto=(idComponente, valor)=>{
+esValidadTexto=function(idComponente, valor){
 
     let hayError=false;
     if (!estaVacia1(idComponente,  valor)) {
@@ -93,7 +93,7 @@ esValidadTexto=(idComponente, valor)=>{
     return hayError;
 }
 
-estaVacia=(idComponente, valor)=>{
+estaVacia=function(idComponente, valor){
     console.log(valor);
     if ( isNaN(valor) || valor=='') {
         mostrarTexto(idComponente,"ESTE CAMPO ES OBLIGATORIO");
@@ -103,7 +103,7 @@ estaVacia=(idComponente, valor)=>{
     }
 }
 
-estaVacia1=(idComponente, valor)=>{
+estaVacia1=function(idComponente, valor){
     console.log(valor);
     if ( !isNaN(valor) || valor=='') {
         mostrarTexto(idComponente,"ESTE CAMPO ES OBLIGATORIO");
@@ -111,4 +111,23 @@ estaVacia1=(idComponente, valor)=>{
     }else{
         return false;
     }
+}
+
+esValidadTexto=function(idComponente, valor){
+
+    let hayError=false;
+    if (!estaVacia1(idComponente,  valor)) {
+        if (valor.length<3) {
+            hayError=true;
+            mostrarTexto(idComponente,"DEBE TENER AL MENOS 3 CARACTERES");
+        } 
+
+        
+    }else{
+        hayError=true;
+    }
+    if (hayError==false) {
+        mostrarTexto(idComponente,"");
+    }
+    return hayError;
 }
