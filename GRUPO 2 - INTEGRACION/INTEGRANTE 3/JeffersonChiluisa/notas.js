@@ -22,18 +22,23 @@ calcular = function () {
 }
 
 guardar = function () {
+
     let nota1=recuperarFloat("txtNota1"),
     nota2=recuperarFloat("txtNota2"),
     nota3=recuperarFloat("txtNota3"),
     nombre=recuperarTexto("txtNombre"),
     apellido=recuperarTexto("txtApellido"),
-    estudiante={}
+    estudiante={};
     
     estudiante.nombre=nombre;
     estudiante.apellido=apellido;
     estudiante.nota1=nota1;
     estudiante.nota2=nota2;
     estudiante.nota3=nota3;
+    let nombreValido= esNombreValido(nombre);
+    let apellidoValido=esNombreValido(apellido);
+    let esNota1Valida=esNota1Valida(nota1);
+    
     let total=calcularTotal(nota1,nota2,nota3),promedio=calcularPromedio(nota1,nota2,nota3);
     estudiante.total=total;
     estudiante.promedio=promedio;

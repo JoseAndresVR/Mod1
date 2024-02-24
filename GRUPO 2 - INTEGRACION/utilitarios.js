@@ -85,6 +85,17 @@ esNombreValido=function(nombre){
     }
 }
 
+esApellidoValido=function(apellido){
+    let nombreValido=false;
+    if(nombre.legth>=3){
+            mostrarTexto("lblApellidoError","");
+        return true;
+    }else{
+    mostrarTexto("lblApellidoError","Debe tener al menos 3 caracteres");
+    return nombreValido;
+    }
+}
+
 estaVacia=(idComponente, valor)=>{
     console.log(valor);
     if ( isNaN(valor) || valor=='') {
