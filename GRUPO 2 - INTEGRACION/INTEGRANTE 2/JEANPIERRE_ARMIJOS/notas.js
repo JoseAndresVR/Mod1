@@ -173,20 +173,22 @@ calcularTotal=(n1,n2,n3)=>{
             let nombre=recuperarTexto("txtNombre");
          let apellido=recuperarTexto("txtApellido");
 
-
-         let nuevaPersona={};
-         nuevaPersona.nombre=nombre;
-         nuevaPersona.apellido=apellido;
-         nuevaPersona.nota1=nota1; 
-         nuevaPersona.nota2=nota2;
-         nuevaPersona.nota3=nota3;
-          nuevaPersona.total=total; 
-          nuevaPersona.promedio=promedio;
-     personas.push(nuevaPersona);
+if (!esValidadTexto('lblErrorNombre',nombre) & !esValidadTexto('lblErrorApellido',apellido)) {
+    let nuevaPersona={};
+    nuevaPersona.nombre=nombre;
+    nuevaPersona.apellido=apellido;
+    nuevaPersona.nota1=nota1; 
+    nuevaPersona.nota2=nota2;
+    nuevaPersona.nota3=nota3;
+     nuevaPersona.total=total; 
+     nuevaPersona.promedio=promedio;
+personas.push(nuevaPersona);
 alert("Notas Guardadas");
-     mostrarTabla();
-     deshabilitarComponente("btnGuardar");
-     limpiar();
+mostrarTabla();
+deshabilitarComponente("btnGuardar");
+limpiar();
+}
+        
         }
 
 
