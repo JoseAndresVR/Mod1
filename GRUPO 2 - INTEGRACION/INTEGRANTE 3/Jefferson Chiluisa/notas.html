@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRUEBA INDIVIDUAL</title>
+    <link rel="stylesheet" href="notas.css">
+    <script src="notas.js"></script>
+    <script src="/GRUPO 2 - INTEGRACION/utilitarios.js"></script>
+</head>
+<body onload="mostrarPersonas();">
+    <div class="cuerpo">
+        <img src="dragonBall.jpg" >
+        
+        <div class="datos">
+            <h3>INGRESA TU NOMBRE</h3>
+        <input type="text" id="txtNombre">
+        <h3>INGRESA TU APELLIDO</h3>
+        <input type="text" id="txtApellido">
+        <h3>INGRESA LA NOTA 1</h3>
+
+        <input type="text" id="txtNota1">
+        <h3>INGRESA LA NOTA 2</h3>
+
+        <input type="text" id="txtNota2">
+        <h3>INGRESA LA NOTA 3</h3>
+
+        <input type="text" id="txtNota3">
+
+        <input type="button" class="botones" value="CALCULAR" onclick="calcular();">
+        <input type="button" class="botones" id="guardar" value="GUARDAR" onclick="guardar();">
+
+        </div>
+
+       <div class="resultado">
+        <h2>RESULTADOS</h2>
+        <label id="lblTotal"></label>
+        <label id="lblPromedio"></label>
+       </div>
+
+       <div class="tabla" id="tablaDiv">
+
+       </div>
+       <footer>
+        <h1>AUTOR: JOSE ANDRES VALENCIA REYES</h1>
+       </footer>
+    </div>
+</body>
+</html>
