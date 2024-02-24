@@ -76,3 +76,7 @@ a{
     color: white;
     font-size: 30px;
 }
+
+.datos label{
+    color: red;
+}
