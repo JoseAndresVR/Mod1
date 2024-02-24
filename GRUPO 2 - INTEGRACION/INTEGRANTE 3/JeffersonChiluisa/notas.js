@@ -38,8 +38,8 @@ guardar = function () {
     let nombreValido= esNombreValido(nombre);
     let apellidoValido=esApellidoValido(apellido);
     let Nota1Valida=esNotaValida("lblNota1Error",nota2);
-    let Nota2Valida=esNotaValida("lblNota1Error",nota2);
-    let Nota3Valida=esNotaValida("lblNota1Error",nota2);
+    let Nota2Valida=esNotaValida("lblNota2Error",nota2);
+    let Nota3Valida=esNotaValida("lblNota3Error",nota2);
     
     if(nombreValido && apellidoValido && Nota1Valida && Nota2Valida &&Nota3Valida){
         

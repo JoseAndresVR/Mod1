@@ -8,6 +8,9 @@ body{
     align-items: center;
 }
 
+label{
+    color: red;
+}
 .cuerpo img{
     width: 500px;
 }
