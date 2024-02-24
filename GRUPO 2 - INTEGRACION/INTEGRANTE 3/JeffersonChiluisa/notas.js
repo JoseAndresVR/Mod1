@@ -36,11 +36,13 @@ guardar = function () {
     estudiante.nota2=nota2;
     estudiante.nota3=nota3;
     let nombreValido= esNombreValido(nombre);
-    let apellidoValido=validarNota("lblNota1Error",nota1);
-    let Nota1Valida=esNotaValida("lblNota2Error",nota2);
-    let esNota1Valida=esNotaValida(nota3);
-
+    let apellidoValido=esApellidoValido(apellido);
+    let Nota1Valida=esNotaValida("lblNota1Error",nota2);
+    let Nota2Valida=esNotaValida("lblNota1Error",nota2);
+    let Nota3Valida=esNotaValida("lblNota1Error",nota2);
     
+    if(nombreValido && apellidoValido && Nota1Valida && Nota2Valida &&Nota3Valida){
+        
     let total=calcularTotal(nota1,nota2,nota3),promedio=calcularPromedio(nota1,nota2,nota3);
     estudiante.total=total;
     estudiante.promedio=promedio;
@@ -56,7 +58,7 @@ guardar = function () {
     mostrarTexto("lblPromedio","");
     deshabilitarComponente("guardar");
 
-
+    }
 
 }
 
