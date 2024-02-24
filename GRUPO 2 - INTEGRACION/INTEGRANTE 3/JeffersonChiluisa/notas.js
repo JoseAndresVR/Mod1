@@ -36,8 +36,10 @@ guardar = function () {
     estudiante.nota2=nota2;
     estudiante.nota3=nota3;
     let nombreValido= esNombreValido(nombre);
-    let apellidoValido=esNombreValido(apellido);
-    let esNota1Valida=esNota1Valida(nota1);
+    let apellidoValido=validarNota("lblNota1Error",nota1);
+    let Nota1Valida=esNotaValida("lblNota2Error",nota2);
+    let esNota1Valida=esNotaValida(nota3);
+
     
     let total=calcularTotal(nota1,nota2,nota3),promedio=calcularPromedio(nota1,nota2,nota3);
     estudiante.total=total;

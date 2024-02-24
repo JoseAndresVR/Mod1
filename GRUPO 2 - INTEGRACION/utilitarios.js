@@ -96,6 +96,18 @@ esApellidoValido=function(apellido){
     }
 }
 
+/*
+esNotaValida=function(idComponente,nota){
+    if(nota<=10 && nota>=0){
+        mostrarTexto(idComponente,"");
+        return true;
+    }else{
+        mostrarTexto(idComponente,"Debe ser entre 0 y 10");
+        return false;
+    }
+}
+*/
+
 estaVacia=(idComponente, valor)=>{
     console.log(valor);
     if ( isNaN(valor) || valor=='') {
